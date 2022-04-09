@@ -1,0 +1,37 @@
+version: '3.1'
+
+services:
+   training_db_mysql:
+       container_name: training_db_mysql
+       hostname: training_db_mysql
+       image: mysql:8
+       restart: unless-stopped
+       cap_add:
+         - SYS_NICE  # CAP_SYS_NICE
+       environment:
+         MYSQL_ROOT_PASSWORD: ${MYSQLROOT}
+         MYSQL_USER: $MYSQLUSER
+         MYSQL_PASSWORD: $MYSQLPASS
+         MYSQL_DATABASE: $MYSQLDATABASE
+       volumes:
+         - training_db_mysql_data:/var/lib/mysql
+       ports:
+         - "${MYSQLPORT}:3306"
+
+   training_db_postgresql:
+       container_name: training_db_postgresql
+       hostname: training_db_postgresql
+       image: postgres:14
+       restart: unless-stopped
+       environment:
+         POSTGRES_DB: $PGDATABASE
+         POSTGRES_USER: $PGUSER
+         POSTGRES_PASSWORD: $PGPASS
+       volumes:
+         - training_db_postgresql_data:/var/lib/mysql
+       ports:
+         - "${PGPORT}:5432"
+
+volumes:
+        training_db_mysql_data:
+        training_db_postgresql_data:
