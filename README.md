@@ -15,11 +15,15 @@ Examples of SQL queries
 
 # HELP
 
-Официальные справочные источники:
-https://dev.mysql.com/doc/
-$> mysql --help
+Официальные справочные источники:  
+https://dev.mysql.com/doc/  
+```
+mysql> help
+```
 
-https://www.postgresql.org/docs/
-postgres=# help
-       \h for help with SQL commands
-       \? for help with psql commands
+https://www.postgresql.org/docs/  
+```
+postgres=# help  
+       \h for help with SQL commands  
+       \? for help with psql commands  
+```       
