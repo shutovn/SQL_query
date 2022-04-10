@@ -9,3 +9,8 @@
 mysql -uroot -h 127.0.0.1 -P33061 -p
 
 psql -Upostgres -h 127.0.0.1 -p54321
+
+
+# Example Databases [world database](https://dev.mysql.com/doc/index-other.html)
+
+mysql -u root -h 127.0.0.1 -P33061 -p < world.sql
